@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'support/database_cleaner'
 require 'support/features/sign_in'
 
 ENV['RAILS_ENV'] ||= 'test'
