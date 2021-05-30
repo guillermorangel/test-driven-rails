@@ -1,0 +1,71 @@
+inherit_from:
+  - ../.rubocop.yml
+
+require:
+  - rubocop-rspec
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+# enforces rules about using `it` or `describe` block methods instead of `feature` or `scenario`
+RSpec/Capybara:
+  Enabled: true
+
+# enforces using the class name in a describe block (e.g. `describe TestedClass do`)
+RSpec/DescribeClass:
+  Enabled: false
+
+# enforces using the described_class variablea (`described_class` instead of MyClass)
+RSpec/DescribedClass:
+  Enabled: false
+
+# RSpec examples are ok if they're long.
+# Explicitness is better than cleverness in tests.
+RSpec/ExampleLength:
+  Enabled: false
+
+# enforces using either `expect` or `allow` for stubs.  Since they do differnet things,
+# we should let the developer decide which to use
+RSpec/MessageExpectation:
+  Enabled: false
+
+# enforces having only one `expect` per test
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+# enforces rules about how many nested `describe` blocks are allowed
+RSpec/NestedGroups:
+  Enabled: false
+
+# NOTE: The Pundit permissions DSL triggers `RepeatedDescription` and
+# `RepeatedExample` false positives. There is some discussion on
+# rspec-rubocop to add config so that this behaves correctly, but it hasn't
+# yet been implemented.
+#
+# https://github.com/rubocop-hq/rubocop-rspec/issues/321
+# https://github.com/rubocop-hq/rubocop-rspec/issues/333
+RSpec/RepeatedDescription:
+  Exclude:
+    - policies/**/*
+
+RSpec/RepeatedExample:
+  Exclude:
+    - policies/**/*
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false

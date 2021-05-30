@@ -1,7 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-feature "User views own todos" do
-  scenario "unable to view other todos" do
+require "rails_helper"
+
+describe "User views own todos" do
+  it "unable to view other todos" do
     Todo.create!(title: "Buy milk", email: "someone_else@example.com")
 
     sign_in_as "someone@example.com"

@@ -1,9 +1,11 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-feature "User visits homepage" do
-  scenario "successfully" do
+require "rails_helper"
+
+describe "User visits homepage" do
+  it "successfully" do
     visit root_path
 
-    expect(page).to have_css 'h1', text: 'Todos'
+    expect(page).to have_css "h1", text: "Todos"
   end
 end

@@ -1,7 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-feature "User creates todo" do
-  scenario "successfully" do
+require "rails_helper"
+
+describe "User creates todo" do
+  it "successfully" do
     sign_in
 
     visit root_path
@@ -11,6 +13,6 @@ feature "User creates todo" do
     fill_in "Title", with: "Buy milk"
     click_on "Submit"
 
-    expect(page).to have_css '.todos li', text: "Buy milk"
+    expect(page).to have_css ".todos li", text: "Buy milk"
   end
 end
