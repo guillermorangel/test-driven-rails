@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "User views own todos" do
+RSpec.describe "User views own todos" do
   it "unable to view other todos" do
     Todo.create!(title: "Buy milk", email: "someone_else@example.com")
 

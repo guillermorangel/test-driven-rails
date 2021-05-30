@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "User creates todo" do
+RSpec.describe "User creates todo" do
   it "successfully" do
     sign_in
 

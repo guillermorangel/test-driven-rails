@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "User visits homepage" do
+RSpec.describe "User visits homepage" do
   it "successfully" do
     visit root_path
 
