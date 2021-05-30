@@ -1,6 +1,9 @@
 <%= link_to "Add new todo", new_todo_path %>
 <ul class="todos">
 <% @todos.each do |t| %>
-  <li><%= t.title %></li>
+  <li class="<%= 'completed' if t.completed? %>">
+    <%= t.title %>
+    <%= link_to "Mark complete", todo_completion_path(t), method: :post %>
+  </li>
 <% end %>
 </ul>
