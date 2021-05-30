@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  delegate :signed_in?, to: :current_user
+
   def authenticate
     redirect_to new_session_path unless signed_in?
-  end
-
-  def signed_in?
-    current_user.signed_in?
   end
 
   def sign_in_as(email)
