@@ -8,6 +8,6 @@ RSpec.describe "User completes todo" do
     create_todo "Buy milk"
     click_on "Mark complete"
 
-    expect(page).to display_todo "Buy milk"
+    expect(page).to display_completed_todo "Buy milk"
   end
 end
