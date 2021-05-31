@@ -3,7 +3,11 @@
 <% @todos.each do |t| %>
   <li class="<%= 'completed' if t.completed? %>">
     <%= t.title %>
-    <%= link_to "Mark complete", todo_completion_path(t), method: :post %>
+    <% if t.completed? %>
+      <%= link_to "Mark incomplete", todo_completion_path(t), method: :delete %>
+    <% else %>
+      <%= link_to "Mark complete", todo_completion_path(t), method: :post %>
+    <% end %>
   </li>
 <% end %>
 </ul>

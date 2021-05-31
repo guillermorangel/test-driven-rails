@@ -8,4 +8,8 @@ class Todo < ApplicationRecord
   def complete!
     update completed_at: Time.current
   end
+
+  def incomplete!
+    update completed_at: nil
+  end
 end
