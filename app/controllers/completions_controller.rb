@@ -2,8 +2,7 @@
 
 class CompletionsController < ApplicationController
   def create
-    # set timestamp and persist the record with touch
-    todo.update(completed_at: Time.current)
+    todo.complete!
     redirect_to todos_path
   end
 
